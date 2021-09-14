@@ -64,7 +64,7 @@ namespace Smokeball_Demo
 
         private List<string> FindResults(string source)
         {
-            Regex regex = new Regex(@"^http(s)?://([\w-]+.)+[\w-]+(/[\w%&=])?$");
+            Regex regex = new Regex(@">([a-z0-9]+\.)*[a-z0-9]+\.[a-z]+", RegexOptions.IgnoreCase & RegexOptions.Multiline);
             MatchCollection Collection = regex.Matches(source);
             List<string> Urls = new List<string>();
             foreach (Match match in Collection)
